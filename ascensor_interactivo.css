@@ -1,0 +1,92 @@
+/* ===== Estilos generales ===== */
+/* Quita márgenes por defecto y facilita el cálculo de tamaños */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Variables de color para reutilizarlas en todo el diseño */
+:root {
+    --fondo: #111827;
+    --metal: #374151;
+    --acento: #f59e0b;
+    --texto: #f9fafb;
+}
+/* Fondo y tipografía de toda la página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    padding: 24px 16px;
+}
+/* ===== Contenedor y encabezado ===== */
+/* Caja central que agrupa todo el contenido */
+.contenedor { max-width: 520px; margin: 0 auto; }
+/* Encabezado centrado */
+.encabezado { text-align: center; margin-bottom: 24px; }
+.encabezado h1 { color: var(--acento); margin-bottom: 6px; }
+.encabezado p { color: #9ca3af; }
+/* ===== Ascensor ===== */
+/* Fila con el pozo a la izquierda y el panel a la derecha */
+.ascensor { display: flex; gap: 20px; justify-content: center; }
+/* Pozo del ascensor: 6 pisos de 50px cada uno (300px en total) */
+.pozo {
+    position: relative; width: 90px; height: 300px;
+    background: #1f2937; border: 4px solid var(--metal); border-radius: 8px;
+}
+/* Cabina: ocupa la altura de un piso y se mueve cambiando "bottom" */
+.cabina {
+    position: absolute; left: 0; width: 100%; height: 16.66%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; background: var(--acento); border-radius: 6px;
+    transition: bottom 0.6s ease;
+}
+/* ===== Panel de control ===== */
+/* Caja gris que contiene pantalla, botones y contador */
+.panel {
+    width: 180px;
+    padding: 16px;
+    background: var(--metal);
+    border-radius: 12px;
+    text-align: center;
+}
+/* Pantalla estilo digital */
+.pantalla {
+    background: #000;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+/* Número grande del piso */
+.numero { display: block; font-size: 3.5rem; font-weight: bold; color: var(--acento); }
+/* Texto pequeño con la dirección */
+.direccion { font-size: 0.85rem; color: #9ca3af; }
+/* ===== Botones ===== */
+/* Cuadrícula de 2 columnas para los botones de piso */
+.botones { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+/* Botón redondo de cada piso */
+.piso {
+    padding: 14px 0;
+    border: 3px solid #9ca3af;
+    border-radius: 50%;
+    background: #1f2937;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* Efecto al pasar el mouse por un botón */
+.piso:hover { border-color: var(--acento); }
+/* Botón del piso actual: iluminado (clase que añade el JS) */
+.piso.activo { background: var(--acento); border-color: var(--acento); color: #000; }
+/* Contador de viajes */
+.viajes { margin-bottom: 12px; font-size: 0.9rem; color: #d1d5db; }
+/* Botón de reiniciar */
+.reiniciar {
+    width: 100%; padding: 8px; border: none; border-radius: 6px;
+    background: #6b7280; color: #fff; cursor: pointer;
+}
+/* ===== Directorio ===== */
+/* Tarjeta con la lista de lugares de cada piso */
+.directorio { margin-top: 24px; padding: 16px; background: var(--metal); border-radius: 12px; }
+.directorio h2 { font-size: 1.1rem; margin-bottom: 10px; }
+.directorio ul { list-style: none; }
+.directorio li { padding: 8px 10px; border-radius: 6px; color: #d1d5db; }
+/* Lugar del piso actual: resaltado (clase que añade el JS) */
+.directorio li.actual { background: var(--acento); color: #000; font-weight: bold; }

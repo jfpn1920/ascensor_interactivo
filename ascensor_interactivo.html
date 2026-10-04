@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ascensor_interactivo</title>
+    <link rel="stylesheet" href="ascensor_interactivo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="ascensor_interactivo.js" defer></script>
+</head>
+<body>
+    <!----------------------------------------->
+    <!--|estructuracion_ascensor_interactivo|-->
+    <!----------------------------------------->
+    <main class="contenedor">
+        <!-- Encabezado con título y descripción -->
+        <header class="encabezado">
+            <h1>🛗 Ascensor Interactivo</h1>
+            <p>Pulsa un botón para cambiar de piso.</p>
+        </header>
+        <!-- Zona principal: el pozo del ascensor y el panel de control -->
+        <section class="ascensor">
+            <!-- Pozo del ascensor: la cabina se mueve dentro de él -->
+            <div class="pozo">
+                <div class="cabina" id="cabina">🛗</div>
+            </div>
+            <!-- Panel de control con pantalla y botones -->
+            <div class="panel">
+                <!-- Pantalla que muestra el piso actual -->
+                <div class="pantalla">
+                    <!-- Número del piso -->
+                    <span class="numero" id="numero">1</span>
+                    <!-- Texto con la dirección del último movimiento -->
+                    <span class="direccion" id="direccion">Detenido</span>
+                </div>
+                <!-- Botones de los pisos (data-piso guarda el número de cada uno) -->
+                <div class="botones" id="botones">
+                    <!-- Piso 6 -->
+                    <button class="piso" data-piso="6">6</button>
+                    <!-- Piso 5 -->
+                    <button class="piso" data-piso="5">5</button>
+                    <!-- Piso 4 -->
+                    <button class="piso" data-piso="4">4</button>
+                    <!-- Piso 3 -->
+                    <button class="piso" data-piso="3">3</button>
+                    <!-- Piso 2 -->
+                    <button class="piso" data-piso="2">2</button>
+                    <!-- Piso 1 -->
+                    <button class="piso" data-piso="1">1</button>
+                </div>
+                <!-- Contador de viajes realizados -->
+                <p class="viajes" id="viajes">Viajes: 0</p>
+                <!-- Botón para volver al piso 1 y borrar los datos -->
+                <button class="reiniciar" id="btn-reiniciar">Reiniciar</button>
+            </div>
+        </section>
+        <!-- Directorio del edificio: se resalta el lugar del piso actual -->
+        <section class="directorio">
+            <h2>🏢 Directorio</h2>
+            <ul id="directorio">
+                <!-- Piso 6: Terraza -->
+                <li data-piso="6">Piso 6 · Terraza</li>
+                <!-- Piso 5: Gimnasio -->
+                <li data-piso="5">Piso 5 · Gimnasio</li>
+                <!-- Piso 4: Biblioteca -->
+                <li data-piso="4">Piso 4 · Biblioteca</li>
+                <!-- Piso 3: Oficinas -->
+                <li data-piso="3">Piso 3 · Oficinas</li>
+                <!-- Piso 2: Cafetería -->
+                <li data-piso="2">Piso 2 · Cafetería</li>
+                <!-- Piso 1: Recepción -->
+                <li data-piso="1">Piso 1 · Recepción</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
